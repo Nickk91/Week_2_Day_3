@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    * {
+      padding: 20px;
+      margin: 10px;
+    }
+    body {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      width: 100%;
+      background: gray;
+      align-items: center;
+    }
+
+    .menu-container {
+      display: flex;
+      position: relative;
+      align-items: center;
+
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .box {
+      display: flex;
+      position: relative;
+      width: 100px;
+      height: 20px;
+      justify-content: center;
+      border-width: 1px;
+      transition-duration: 0.3s;
+    }
+    .box::before,
+    .box::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 10%;
+      background-color: #030100;
+      transition: 0.3s;
+    }
+
+    .box::before {
+      bottom: 0;
+      left: 0;
+    }
+
+    .box::after {
+      top: 0;
+      right: 0;
+    }
+
+    .box:hover::before {
+      width: 100%;
+    }
+
+    .box:hover::after {
+      width: 100%;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NavBar</title>
+  </head>
+  <body>
+    <div class="menu-container">
+      <div id="home" class="box">Home</div>
+      <div id="about" class="box">About</div>
+      <div id="services" class="box">Services</div>
+      <div id="portfolio" class="box">Portfolio</div>
+      <div id="contact" class="box">Contact</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Transitions</title>
+    <style>
+      body {
+        display: flex;
+        width: 100vw;
+        align-items: center;
+        background: gray;
+        justify-content: space-between;
+        justify-content: center;
+      }
+
+      .cool {
+        display: flex;
+        position: relative;
+        width: 90px;
+        height: 50px;
+        border-style: solid;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 3s;
+        overflow: hidden;
+      }
+
+      .cool::before {
+        display: flex;
+        position: absolute;
+        content: "";
+        height: 0%;
+        width: 100%;
+        bottom: 100%;
+        /* top:0; */
+        background: red;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+      }
+
+      .cool:hover::before {
+        content: "Cool!";
+
+        width: 90px;
+        height: 100%;
+        transform: translatey(100%);
+      }
+
+      .translateX {
+        display: flex;
+        position: relative;
+        width: 90px;
+        height: 50px;
+        border-style: solid;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 3s;
+        overflow: hidden;
+      }
+      .translateX::before {
+        display: flex;
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 0%;
+        bottom: 0;
+        left: -90px;
+        z-index: -1;
+        background: rgb(17, 0, 255);
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      .translateX:hover::before {
+        content: "";
+        text-align: right;
+        left: -45px;
+        width: 190px;
+        height: 100%;
+      }
+
+      .rotate {
+        display: flex;
+        position: relative;
+        width: 90px;
+        height: 50px;
+        border-style: solid;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 3s;
+        overflow: hidden;
+      }
+      .rotate::before {
+        display: flex;
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+
+        justify-content: center;
+        align-items: center;
+        transform: rotate(90deg);
+        transform-origin: top left;
+        transition: all 0.4s;
+        z-index: -1;
+
+        transition: 0.4s;
+      }
+
+      .rotate:hover::before {
+        content: "";
+        transform: rotate(0);
+        background: yellow;
+
+        left: 0;
+        width: 90px;
+        height: 100%;
+      }
+
+      .scale {
+        display: flex;
+        position: relative;
+        width: 90px;
+        height: 50px;
+        border-style: solid;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 3s;
+        overflow: hidden;
+      }
+      .scale::before {
+        display: flex;
+        position: absolute;
+        content: "Scale";
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        transform: scale(4);
+        opacity: 0;
+        transition: all 0.4s;
+        z-index: 2;
+      }
+
+      .scale:hover::before {
+        content: "Scale";
+        transform: scale(1);
+        opacity: 1;
+        background: rgb(0, 0, 0);
+        color: aliceblue;
+        left: 0;
+        width: 90px;
+        height: 100%;
+      }
+
+      .skew {
+        display: flex;
+        position: relative;
+        width: 90px;
+        height: 50px;
+        border-style: solid;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 0.1s;
+        /* overflow: hidden; */
+      }
+      .skew::before {
+        display: flex;
+        position: absolute;
+        content: "";
+        justify-content: center;
+        align-items: center;
+        transform: rotateX(360deg);
+        transition: 0.4s;
+      }
+
+      .skew:hover::before {
+        content: "Skew";
+        transform: skewY(10deg);
+        border-style: solid;
+        border-color: black;
+        background: rgb(245, 6, 77);
+        color: aliceblue;
+        left: 0;
+        width: 90px;
+        height: 100%;
+      }
+
+      .skew:hover {
+        border-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box cool">TranslateY</div>
+    <div class="box translateX">TranslateX</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box scale">Scale</div>
+    <div class="box skew">Skew</div>
+  </body>
+</html>
