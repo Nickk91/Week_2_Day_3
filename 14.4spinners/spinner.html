@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spinner</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: row;
+        width: 1000px;
+        background: black;
+        
+      }
+
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-color: blue;
+        border-top: red;
+        border-width: 4px;
+        border-style: dotted;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+    
+
+      #dot1 {
+        position: absolute;
+        height: 30px;
+        border-color: brown;
+        background: burlywood;
+        margin: 5px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .dot {
+        background: rgba(190, 190, 190, 0.959);
+        border: #ccc;
+        margin: 2px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        border-radius: 50%;
+        flex: 1;
+      }
+
+     
+
+
+
+    
+
+  
+    </style>
+  </head>
+  <body>
+    <div class="circle"></div>
+    
+    <div class="container">
+            <div id="dotone" class="dot"></div>
+            <div id="dottwo" class="dot"></div>
+            <div id="dotthree"; class="dot"></div>
+          </div>
+    </div>
+  </body>
+</html>
